@@ -6,6 +6,7 @@ import 'demo/basic_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/view_demo.dart';
 import 'demo/navigator_demo.dart';
+import 'demo/form_demo.dart';
 
 void main() {
   runApp(
@@ -18,15 +19,17 @@ class App extends StatelessWidget {
     Widget build(BuildContext context) {
       return MaterialApp(
         // home: NavigatorDemo(),
-        initialRoute: '/',
+        initialRoute: '/form',
         routes: {
           '/': (context) => Home(),
-          '/about': (context) => Page(title: 'About')
+          '/about': (context) => Page(title: 'About'),
+          '/form': (context) => FormDemo()
         },
         theme: ThemeData(
           primarySwatch: Colors.blue,
           highlightColor: Colors.green,
-          splashColor: Colors.red
+          splashColor: Colors.red,
+          accentColor: Color.fromRGBO(3, 54, 255, 1.0)
         ),
       );
     }
