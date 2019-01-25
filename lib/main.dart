@@ -5,6 +5,7 @@ import 'demo/bottom_navigation_bar_demo.dart';
 import 'demo/basic_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/view_demo.dart';
+import 'demo/navigator_demo.dart';
 
 void main() {
   runApp(
@@ -16,7 +17,12 @@ class App extends StatelessWidget {
   @override
     Widget build(BuildContext context) {
       return MaterialApp(
-        home: Home(),
+        // home: NavigatorDemo(),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => Home(),
+          '/about': (context) => Page(title: 'About')
+        },
         theme: ThemeData(
           primarySwatch: Colors.blue,
           highlightColor: Colors.green,
