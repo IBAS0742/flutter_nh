@@ -1,7 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:test_one/demo/button_dmo.dart';
+import 'package:test_one/demo/flat_action_button_demo.dart';
+import 'package:test_one/demo/popup_menu_button.dart';
+import 'package:test_one/demo/form_demo.dart';
+import 'package:test_one/demo/checkbox_demo.dart';
+import 'package:test_one/demo/radio_demo.dart';
+import 'package:test_one/demo/switch_demo.dart';
+import 'package:test_one/demo/slider_demo.dart';
+import 'package:test_one/demo/datetime_demo.dart';
+import 'package:test_one/demo/simple_dialog_demo.dart';
+import 'package:test_one/demo/alert_dialog_demo.dart';
+import 'package:test_one/demo/bottom_sheet_demo.dart';
+import 'package:test_one/demo/snack_bar_demo.dart';
+import 'package:test_one/demo/expansion_panel_demo.dart';
+import 'package:test_one/demo/chip_demo.dart';
 
 class MaterialComponent extends StatelessWidget {
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -10,6 +26,19 @@ class MaterialComponent extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'ChipDemo',page: ChipDemo(),),
+          ListItem(title: 'ExpansionPanelDemo',page: ExpansionPanelDemo(),),
+          ListItem(title: 'SnackBarDemo',page: SnackBarDemo(),),
+          ListItem(title: 'BottomSheetDemo',page: BottomSheetDemo(),),
+          ListItem(title: 'AlertDialogDemo',page: AlertDialogDemo(),),
+          ListItem(title: 'SimpleDialogDemo',page: SimpleDialogDemo(),),
+          ListItem(title: 'DateTimeDemo',page: DateTimeDemo(),),
+          ListItem(title: 'SliderDemo',page: SliderDemo(),),
+          ListItem(title: 'SwitchDemo',page: SwitchDemo(),),
+          ListItem(title: 'RadioDemo',page: RadioDemo(),),
+          ListItem(title: 'CheckBox',page: CheckBoxDemo(),),
+          ListItem(title: 'FormDemo',page: FormDemo(),),
+          ListItem(title: 'PopupMenuButton',page: PopupMenuButtonDemo(),),
           ListItem(title: 'FloatingActionButton',page: FloatingActionButtonDemo(),),
           ListItem(title: 'ButtonDemo',page: ButtonDemo(),),
         ],
@@ -40,101 +69,6 @@ class ListItem extends StatelessWidget {
   }
 }
 
-class FloatingActionButtonDemo extends StatelessWidget {
-  final Widget _floatingActionButton = FloatingActionButton(
-    onPressed: () {},
-    child: Icon(Icons.add),
-    elevation: 0.0,
-    backgroundColor: Colors.black87,
-    // shape: BeveledRectangleBorder(
-    //   borderRadius: BorderRadius.circular(30.0)
-    // ),
-  );
-
-  final Widget _floatingActionButtonExtended = FloatingActionButton.extended(
-    onPressed: () {},
-    icon: Icon(Icons.add),
-    label: Text('Add'),
-  );
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("FloatingActionButtonDemo"),
-        elevation: 0.0,
-      ),
-      floatingActionButton: _floatingActionButton,
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        child: Container(
-          height: 80.0,
-        ),
-        shape: CircularNotchedRectangle(),
-      ),
-    );
-  }
-}
-
-class ButtonDemo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final Widget FlatButtonDemo = Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        FlatButton(
-          child: Text('Button'),
-          onPressed: (){},
-          splashColor: Colors.yellow,
-          textColor: Theme.of(context).accentColor,
-        ),
-        FlatButton.icon(
-          icon: Icon(Icons.add),
-          label: Text('Button'),
-          onPressed: (){},
-          splashColor: Colors.yellow,
-          textColor: Theme.of(context).accentColor,
-        ),
-      ],
-    );
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('ButtonDemo'),
-        elevation: 0.0,
-      ),
-      body: Container(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                RaisedButton(
-                  child: Text('Button'),
-                  onPressed: (){},
-                  splashColor: Colors.yellow,
-                  textColor: Theme.of(context).accentColor,
-                ),
-                SizedBox(
-                  width: 16.0,
-                ),
-                RaisedButton.icon(
-                  icon: Icon(Icons.add),
-                  label: Text('Button'),
-                  onPressed: (){},
-                  splashColor: Colors.yellow,
-                  textColor: Theme.of(context).accentColor,
-                ),
-              ],
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 class _WidgetDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -160,14 +94,4 @@ class _WidgetDemo extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
 
