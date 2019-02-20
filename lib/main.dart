@@ -8,6 +8,7 @@ import 'demo/view_demo.dart';
 import 'demo/navigator_demo.dart';
 import 'demo/form_demo.dart';
 import 'demo/material_component.dart';
+import 'demo/state/state_management_demo.dart';
 
 void main() {
   runApp(
@@ -20,12 +21,13 @@ class App extends StatelessWidget {
     Widget build(BuildContext context) {
       return MaterialApp(
         // home: NavigatorDemo(),
-        initialRoute: '/mdc',
+        initialRoute: '/state-management',
         routes: {
           '/': (context) => Home(),
           '/about': (context) => Page(title: 'About'),
           '/form': (context) => FormDemo(),
-          '/mdc': (context) => MaterialComponent()
+          '/mdc': (context) => MaterialComponent(),
+          '/state-management': (context) => StateManagementDemo()
         },
         theme: ThemeData(
           primarySwatch: Colors.blue,
