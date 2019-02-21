@@ -11,6 +11,7 @@ import 'demo/material_component.dart';
 import 'demo/state/state_management_demo.dart';
 import 'demo/stream/stream_demo.dart';
 import 'demo/rxdart/rxdart_demo.dart';
+import 'demo/bloc/bloc_demo.dart';
 
 void main() {
   runApp(
@@ -23,7 +24,7 @@ class App extends StatelessWidget {
     Widget build(BuildContext context) {
       return MaterialApp(
         // home: NavigatorDemo(),
-        initialRoute: '/rxdart',
+        initialRoute: '/bloc',
         routes: {
           '/': (context) => Home(),
           '/about': (context) => Page(title: 'About'),
@@ -32,6 +33,7 @@ class App extends StatelessWidget {
           '/state-management': (context) => StateManagementDemo(),
           '/Stream': (context) => StreamDemo(),
           '/rxdart': (context) => RxDartDemo(),
+          '/bloc': (context) => BlocDemo(),
         },
         theme: ThemeData(
           primarySwatch: Colors.blue,
