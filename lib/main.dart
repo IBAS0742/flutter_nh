@@ -13,6 +13,9 @@ import 'demo/stream/stream_demo.dart';
 import 'demo/rxdart/rxdart_demo.dart';
 import 'demo/bloc/bloc_demo.dart';
 import 'demo/animation/animation_demo.dart';
+import 'demo/i18n/i18n_demo.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'demo/i18n/map/ninghao_demo_localizations.dart';
 
 void main() {
   runApp(
@@ -24,8 +27,21 @@ class App extends StatelessWidget {
   @override
     Widget build(BuildContext context) {
       return MaterialApp(
+        locale: Locale('zh','CN'),
+        // localeListResolutionCallback: (List<Locale> locales,Iterable<Locale> supportedLocales) {
+        //   return Locale('en','US');
+        // },
+        localizationsDelegates: [
+          NinghaoDemoLocalizationDelegate(),
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate
+        ],
+        supportedLocales: [
+          Locale('en','US'),
+          Locale('zh','CN'),
+        ],
         // home: NavigatorDemo(),
-        initialRoute: '/animation',
+        initialRoute: '/i18n',
         routes: {
           '/': (context) => Home(),
           '/about': (context) => Page(title: 'About'),
@@ -35,7 +51,8 @@ class App extends StatelessWidget {
           '/Stream': (context) => StreamDemo(),
           '/rxdart': (context) => RxDartDemo(),
           '/bloc': (context) => BlocDemo(),
-          '/animation': (context) => AnimationDemo()
+          '/animation': (context) => AnimationDemo(),
+          '/i18n': (context) => I18nDemo()
         },
         theme: ThemeData(
           primarySwatch: Colors.blue,
